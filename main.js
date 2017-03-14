@@ -1,4 +1,4 @@
-var file = "weekly-data-lofi.csv"
+var file = "weekly.csv"
 // color can be blue, pink, orange
 chart(file, "orange");
 
