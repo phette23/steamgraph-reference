@@ -53,13 +53,16 @@ function chart(csvpath, color) {
     var z = d3.scale.ordinal()
         .range(colorrange);
 
+    // set outerTickSize to zero, distracting non-data ink
     var xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom")
-        .ticks(d3.time.weeks);
+        .ticks(d3.time.weeks)
+        .outerTickSize(0);
 
     var yAxis = d3.svg.axis()
-        .scale(y);
+        .scale(y)
+        .outerTickSize(0);
 
     var yAxisr = d3.svg.axis()
         .scale(y);
