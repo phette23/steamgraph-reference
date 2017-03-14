@@ -1,8 +1,9 @@
 body {
-  font: 10px sans-serif;
+  /* 10px is ludicrously small font size, up it */
+  font: 18px sans-serif;
 }
 
-.chart { 
+.chart {
   background: #fff;
 }
 
@@ -13,13 +14,25 @@ p {
 
 .axis path, .axis line {
   fill: none;
-  stroke: #000;
-  stroke-width: 2px;
+  /* lighten this from black */
+  stroke: #666;
+  /* reduce from 2px */
+  stroke-width: 1px;
+  /* this actually looks worse, too harsh
   shape-rendering: crispEdges;
+  */
 }
 
 button {
   position: absolute;
   right: 50px;
   top: 10px;
+}
+
+/* my edits, make it cleaner */
+
+/* ticks are noise, non-data ink, serve no purpose
+with labels right beside them */
+.tick line {
+  stroke: transparent;
 }

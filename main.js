@@ -158,7 +158,7 @@ function chart(csvpath, color) {
                     .classed("hover", true)
                     .attr("stroke", strokecolor)
                     .attr("stroke-width", "0.5px"), 
-                tooltip.html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "visible");
+                tooltip.html("<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "visible");
             })
 
             .on("mouseout", function(d, i) {
