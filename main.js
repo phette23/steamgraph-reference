@@ -130,7 +130,6 @@ function chart(csvpath, color) {
                 mousex = d3.mouse(this);
                 mousex = mousex[0];
                 var invertedx = x.invert(mousex);
-                console.log(invertedx)
                 // we'll use mouse position to look up date we're hovering above
                 // here we map mouse position on X axis to "day" index
                 // which is not really 1-365 but works without collisions
