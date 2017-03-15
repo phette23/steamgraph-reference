@@ -1,6 +1,5 @@
-var file = "weekly.csv"
 // color can be blue, pink, orange
-chart(file, "orange");
+chart("daily.csv", "orange");
 
 var datearray = [];
 var colorrange = [];
