@@ -34,15 +34,9 @@ function chart(csvpath, color) {
     var width = document.body.clientWidth - margin.left - margin.right;
     var height = 400 - margin.top - margin.bottom;
 
-    // @todo better designed tooltip
-    var tooltip = d3.select("body")
+    var tooltip = d3.select(".chart")
         .append("div")
-        .attr("class", "remove")
-        .style("position", "absolute")
-        .style("z-index", "20")
-        .style("visibility", "hidden")
-        .style("top", "30px")
-        .style("left", "55px");
+        .attr("class", "tooltip")
 
     var x = d3.time.scale()
         .range([0, width]);
@@ -152,13 +146,14 @@ function chart(csvpath, color) {
                 while (mousedate === -1) {
                     mousedate = datearray.indexOf(--invertedx)
                 }
-                pro = d.values[mousedate].value;
+                quantity = d.values[mousedate].value;
 
                 d3.select(this)
                     .classed("hover", true)
                     .attr("stroke", strokecolor)
-                    .attr("stroke-width", "0.5px"), 
-                tooltip.html("<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "visible");
+                    .attr("stroke-width", "0.5px");
+                tooltip.html(`<p>${quantity} - ${d.key}</p>`)
+                    .style("visibility", "visible");
             })
 
             .on("mouseout", function(d, i) {
@@ -168,9 +163,10 @@ function chart(csvpath, color) {
                     .attr("opacity", "1");
                 d3.select(this)
                     .classed("hover", false)
-                    .attr("stroke-width", "0px"), tooltip.style("visibility", "hidden");
+                    .attr("stroke-width", "0px");
+                tooltip.style("visibility", "hidden");
             })
-            
+
         var vertical = d3.select(".chart")
                 .append("div")
                 .attr("class", "remove")
