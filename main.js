@@ -4,8 +4,8 @@ chart("daily.csv", "orange");
 var datearray = [];
 var colorrange = [];
 
-document.querySelectorAll('#data-list a').forEach(node => {
-    node.addEventListener('click', (event) => {
+document.querySelectorAll('#data-list a').forEach(function(node) {
+    node.addEventListener('click', function(event) {
         // blank chart & then redraw
         d3.select('.chart').html('')
         // filename is stored as a data attribute
@@ -151,7 +151,7 @@ function chart(csvpath, color) {
                     .classed("hover", true)
                     .attr("stroke", strokecolor)
                     .attr("stroke-width", "0.5px");
-                tooltip.html(`<p>${quantity} - ${d.key}</p>`)
+                tooltip.html('<p>' + quantity + ' - ' + d.key + '</p>')
                     .style("visibility", "visible");
             })
 
