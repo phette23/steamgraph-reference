@@ -179,8 +179,9 @@ function chart(csvpath, color) {
                 .style("position", "absolute")
                 .style("z-index", "19")
                 .style("width", "1px")
-                .style("height", "380px")
-                .style("top", "10px")
+                .style("height", "420px")
+                // need to adjust for <h1> up top
+                .style("top", 30 + d3.select('h1')[0][0].offsetHeight + "px")
                 .style("bottom", "30px")
                 .style("left", "0px")
                 .style("background", "#fff");
