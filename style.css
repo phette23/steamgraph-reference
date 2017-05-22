@@ -3,6 +3,11 @@ body {
   font: 18px sans-serif;
 }
 
+/* needed for vertically-oriented X axis labels to display */
+svg {
+    overflow: visible;
+}
+
 .axis path, .axis line {
   fill: none;
   /* lighten this from black */

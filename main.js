@@ -31,7 +31,7 @@ function chart(csvpath, color) {
 
     var margin = {top: 20, right: 40, bottom: 30, left: 30};
     var width = document.body.clientWidth - margin.left - margin.right;
-    var height = 400 - margin.top - margin.bottom;
+    var height = 450 - margin.top - margin.bottom;
 
     var tooltip = d3.select(".chart")
         .append("div")
@@ -102,7 +102,13 @@ function chart(csvpath, color) {
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
-            .call(xAxis);
+            .call(xAxis)
+            .selectAll("text")
+                .attr("y", 0)
+                .attr("x", 9)
+                .attr("dy", ".35em")
+                .attr("transform", "rotate(90)")
+                .style("text-anchor", "start");
 
         svg.append("g")
             .attr("class", "y axis")
