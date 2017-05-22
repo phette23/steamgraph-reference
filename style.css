@@ -3,6 +3,10 @@ body {
   font: 18px sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
 /* needed for vertically-oriented X axis labels to display */
 svg {
     overflow: visible;
