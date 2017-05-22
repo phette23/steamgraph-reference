@@ -145,13 +145,14 @@ function chart(csvpath, color) {
                 while (mousedate === -1) {
                     mousedate = datearray.indexOf(--invertedx)
                 }
-                quantity = d.values[mousedate].value;
+                quantity = d.values[mousedate].value
+                datestr = d.values[mousedate].date.toDateString()
 
                 d3.select(this)
                     .classed("hover", true)
                     .attr("stroke", strokecolor)
                     .attr("stroke-width", "0.5px");
-                tooltip.html('<p>' + quantity + ' - ' + d.key + '</p>')
+                tooltip.html('<p>' + quantity + ' - ' + d.key + '<br>' + datestr + '</p>')
                     .style("visibility", "visible");
             })
 
